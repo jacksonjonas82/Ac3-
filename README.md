@@ -2,7 +2,9 @@
 
 # _Lista de Comandos para GNU/Linux_
 
+
 _Atalhos Globais_
+
 
 1. Ctrl+C (cancela o comando atual em funcionamento)
 
@@ -18,7 +20,9 @@ _Atalhos Globais_
 
 7. !! (repete o último comando)
 
+
 _Lista dos Comandos mais Comuns_ 
+
 
 1. Exit faz logout da sessão atual
 
@@ -85,7 +89,9 @@ touch arq cria ou atualiza o arquivo (substituir a variável arq pelo nome do ar
 
 Explicação: Para definir permissões, somam-se os valores acima. Por exemplo, para atribuir ao dono do arquivo (“usuário) acesso total de leitura (r), gravação (w) e execução (x), basta somar o valor octal 4 + 2 + 1 = 7. Supondo que você queira limitar o acesso para membros do “grupo”, permitindo apenas a leitura e gravação, basta somar 4 + 2 = 6. Reunindo os dois exemplos citados, ficaria: chmod 760 (r para usuário, w para grupo e 0 para outros ou “rw-“)
 
+
 _Outros exemplos_
+
 
 1. chmod 777: leitura (r), gravação (w) e execução (x) para todos (“usuário”, “grupo” e “outros”)
 
@@ -171,7 +177,9 @@ _Outros exemplos_
 make
 make install
 
+
 _Comandos de instaladores_
+
 
 1. dpkg -i deb instala um pacote DEB (distros Debian) (substituir a variável pacote.deb pelo nome do pacote de programa)
 
@@ -229,7 +237,9 @@ _Informações do sistema Linux_
 
 25. clock -w: Salve as alterações para a data na BIOS.
 
+
 _Arquivos e diretórios_
+
 
 1. cd /home: Digite o diretório “em casa”.
 
@@ -301,7 +311,9 @@ _Arquivos e diretórios_
 
 35. find . -maxdepth 1 -name *.jpg –print -exec convert ”{}” -resize 80×60 “thumbs/{}” \;: agrupando arquivos dimensionados no diretório atual e enviá-los aos diretórios em visualização de miniaturas (requer o converso do ImagemagicK).
 
+
 _Encontrar arquivos_
+
 
 1. find / -name file1: busca de arquivo e diretório da raiz do sistema.
 
@@ -323,7 +335,9 @@ _Encontrar arquivos_
 
 10. which halt: mostrar o caminho completo (o caminho completo) para um binário / executável.
 
+
 _Trabalhando com sistema de arquivos_
+
 
 1. mount /dev/hda2 /mnt/hda2: Monte um disco chamado hda2. Primeiro, verifique a existência do diretório ‘/ mnt/hda2’; Se você não estiver, você deve criá-lo.
 
@@ -347,7 +361,9 @@ _Trabalhando com sistema de arquivos_
 
 11. mount /dev/sda1 /mnt/usbdisk: Monte uma memória ou um pen-drive usb (sem especificar o tipo de sistema de arquivos).
 
+
 _Espaço em disco_
+
 
 1. df -h: Mostre o tamanho dos arquivos e diretórios ordenados por tamanho.
 
@@ -361,7 +377,9 @@ _Espaço em disco_
 
 6. dpkg-query -W -f=’${Installed-Size;10}t${Package}n’ | sort -k1,1n: Mostrar (no Debian ou derivados) uma lista com 25 pacotes instalados que consomem mais espaço (em ordem decrescente)
 
+
 _Usuários e grupos_
+
 
 1. groupadd nombre_del_grupo: Crie um novo grupo.
 
@@ -388,7 +406,9 @@ pwck: Verifique a sintaxe correta ‘/ etc/passwd’ arquivo formato e a existê
 
 12. newgrp group_name: Registre um novo grupo para alterar o grupo padrão dos arquivos recém-criados.
 
+
 _Permissões de Arquivos (+ Adiciona e – Remover permissões)_
+
 
 1. ls -lh: Mostre permissões.
 
@@ -420,7 +440,9 @@ _Permissões de Arquivos (+ Adiciona e – Remover permissões)_
 
 15. chmod o-t /home/public: Desative STIKY bit em um diretório.
 
+
 _Atributos especiais de arquivo: (“+” Adiciona e “–” Remover permissões)_
+
 
 1. chattr +a file1: permite gravar apenas abrindo um arquivo acrescentar modo.
 
@@ -438,7 +460,9 @@ _Atributos especiais de arquivo: (“+” Adiciona e “–” Remover permissõ
 
 8. lsattr: Mostre atributos especiais.
 
+
 _Arquivos e arquivos compactados_
+
 
 1. bunzip2 file1.bz2: Descompacte um arquivo chamado ‘file1.bz2’.
 
@@ -482,7 +506,9 @@ _Arquivos e arquivos compactados_
 
 21. unzip file1.zip: Descompacte um arquivo zip.
 
+
 _Pacotes RPM (Red Hat, Fedora e similares)_
+
 
 1. rpm -ivh package.rpm: Instale um pacote rpm.
 
@@ -536,7 +562,9 @@ _Pacotes RPM (Red Hat, Fedora e similares)_
 
 26. rpmbuild –rebuild package_name.src.rpm: Construa um pacote rpm a partir de um rpm fonte.
 
+
 _Pacotes YUM Updater (Red Hat, Fedora e similares)_
+
 
 1. yum install package_name: Baixar e instalar um pacote rpm.
 
@@ -558,7 +586,9 @@ _Pacotes YUM Updater (Red Hat, Fedora e similares)_
 
 10. yum clean all: Remova os arquivos de cache e o cabeçalho do pacote.
 
+
 _Pacotes deb (Debian, Ubuntu e derivados)_
+
 
 1. dpkg -i package.deb: instalar / atualizar um pacote deb.
 
@@ -576,7 +606,9 @@ _Pacotes deb (Debian, Ubuntu e derivados)_
 
 8. dpkg -S /bin/ping: Verificar qual pacote pertence um determinado arquivo.
 
+
 _Atualizador de pacotes APT (Debian, Ubuntu y derivados)_
+
 
 1. apt-get install package_name: instalar / atualizar um pacote deb.
 
@@ -594,7 +626,9 @@ _Atualizador de pacotes APT (Debian, Ubuntu y derivados)_
 
 8. apt-cache search searched-package: Retorna a lista de pacotes que corresponde à série ‘queria pacotes’.
 
+
 _Exibir o conteúdo de um arquivo_
+
 
 1. cat file1: Ver o conteúdo de um arquivo a partir da primeira linha.
 
@@ -610,7 +644,9 @@ _Exibir o conteúdo de um arquivo_
 
 7. tail -f /var/log/messages: Ver em tempo real o que foi adicionado ao arquivo.
 
+
 _Manipulação de texto_
+
 
 1. cat file1 file2 .. | command <> file1_in.txt_or_file1_out.txt: sintaxe geral para a manipulação de texto usando o tubo, STDIN e STDOUT.
 
@@ -638,7 +674,9 @@ _Manipulação de texto_
 
 13. sed -n ‘/stringa1/p’: exibir somente as linhas que contêm a palavra “string1”.
 
+
 _Estabelecer o formato de conversão de arquivos_
+
 
 1. dos2unix filedos.txt fileunix.txt: Converta um formato de arquivo de texto do MSDOS para UNIX.
 
@@ -648,7 +686,9 @@ _Estabelecer o formato de conversão de arquivos_
 
 4. recode -l | more: Mostre todas as conversões de formato disponíveis.
 
+
 _Análise de sistema de arquivos_
+
 
 1. badblocks -v /dev/hda1: Verifica os blocos defeituosos no disco hda1.
 
@@ -668,7 +708,9 @@ _Análise de sistema de arquivos_
 
 9. dosfsck /dev/hda1: reparar / verificar a integridade de um arquivo a partir do dos sistema disco hda1.
 
+
 _Formatar sistema de arquivos_
+
 
 1. mkfs /dev/hda1: Verifica os blocos defeituosos no disco hda1.
 
@@ -682,7 +724,9 @@ _Formatar sistema de arquivos_
 
 6. mkswap /dev/hda3: reparação / verificar a integridade do sistema de arquivo ext3 no disco hda1.
 
+
 _Backups_
+
 
 1. dump -0aj -f /tmp/home0.bak /home: Fazer um completo salvar do directório ‘/Home’.
 
@@ -718,7 +762,9 @@ _Backups_
 
 17. dd if=/dev/fd0 of=/dev/hda bs=512 count=1: Restaurar a cópia da (MBR Master Boot Record) gravada no disquete.
 
+
 _CD-ROM_
+
 
 1. cdrecord -v gracetime=2 dev=/dev/cdrom -eject blank=fast -force: limpar ou apagar um cd regravável.
 
@@ -742,7 +788,9 @@ _CD-ROM_
 
 11. dd if=/dev/hdc | md5sum: Execute um md5sum em um dispositivo, como um CD.
 
+
 _Redes (LAN e Wi-Fi)_
+
 
 1. ifconfig eth0: Mostre a configuração de uma placa de rede Ethernet.
 
@@ -790,7 +838,9 @@ _Redes (LAN e Wi-Fi)_
 
 23. whois example.com: Pesquisa Base de dados Whois .
 
+
 _Redes Microsoft Windows (SAMBA)_
+
 
 1. nbtscan ip_addr: resolução de nome de rede do BIOS.
 
@@ -798,7 +848,9 @@ _Redes Microsoft Windows (SAMBA)_
 
 3. smbclient -L ip_addr/hostname: Visualizar compartilhamentos remotos de um host windows.
 
-Firewall (iptables)
+
+_Firewall (iptables)_
+
 
 1. iptables -t filter -L: Mostre todas as correntes na tabela de filtro.
 
@@ -822,7 +874,9 @@ Firewall (iptables)
 
 11. iptables -t nat -A PREROUTING -d 192.168.0.1 -p tcp -m tcp –dport 22 -j DNAT –to-destination 10.0.0.2
 
+
 _Monitoramento e depuração_
+
 
 1. top: Exiba tarefas linux usando mais cpu.
 
@@ -860,7 +914,9 @@ _Monitoramento e depuração_
 
 18. tail /var/log/messages: Mostre eventos de sistema.
 
+
 _Dicas e Comandos úteis_
+
 
 1. apropos …keyword: exibir uma lista de comandos que pertencem às palavras-chave de um programa; Eles são úteis quando você sabe o que faz o seu programa, mas sconoces o nome do comando.
 
