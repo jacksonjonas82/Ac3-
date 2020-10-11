@@ -43,12 +43,17 @@ touch arq cria ou atualiza o arquivo (substituir a variável arq pelo nome do ar
 26. fg traz o trabalho mais recente para o primeiro plano
 27. fg trab traz o trabalho “trab” para o primeiro plano (substituir trab pelo nome do processo)
 28. chmod octal arq muda as permissões do arquivo “arq” para octal, que pode ser especificada separadamente para “usuário”, “grupo” e “outros”. Os valores em octal são representados abaixo:
+
 4 – leitura (r, de read)
+
 2 – gravação (w, de write)
+
 1 – execução (x, de execute)
+
 Explanação: Para definir permissões, somam-se os valores acima. Por exemplo, para atribuir ao dono do arquivo (“usuário) acesso total de leitura (r), gravação (w) e execução (x), basta somar o valor octal 4 + 2 + 1 = 7. Supondo que você queira limitar o acesso para membros do “grupo”, permitindo apenas a leitura e gravação, basta somar 4 + 2 = 6. Reunindo os dois exemplos citados, ficaria: chmod 760 (r para usuário, w para grupo e 0 para outros ou “rw-“)
 
-Outros exemplos
+_Outros exemplos_
+
 chmod 777: leitura (r), gravação (w) e execução (x) para todos (“usuário”, “grupo” e “outros”)
 chmod 755: “rwx” para o “dono” (usuário), “rw” para o “grupo” e “outros”
 Para mais informações, digite no terminal: man chmod
@@ -94,12 +99,16 @@ Instalação a partir do código fonte (source code); os comandos devem ser digi
 ./configure
 make
 make install
-Comandos de instaladores
+
+_Comandos de instaladores_
+
 dpkg -i deb instala um pacote DEB (distros Debian) (substituir a variável pacote.deb pelo nome do pacote de programa)
 rpm -Uvh rpm instala um pacote RPM (Distros que utilizam RPM) (substituir a variávelpacote.rpmpelo nome do pacote de programa)
-Guia de Referência Completo:
-Comandos Avançados do Terminal GNU/Linux
-Informações do sistema Linux
+
+# Comandos Avançados do Terminal GNU/Linux
+
+_Informações do sistema Linux_
+
 arch: Mostre a arquitetura da máquina (1).
 uname -m: Mostre a arquitetura da máquina (2).
 uname -r: Mostre versão do kernel usada.
@@ -125,7 +134,9 @@ cal 2011: Visualizar o calendário em 2011.
 cal 07 2011: Mostre o calendário para o mês de julho de 2011.
 date 041217002011.00: Coloque (estado, ajustar) data e hora.
 clock -w: Salve as alterações para a data na BIOS.
-Desligar (reinicialização do sistema ou logout)
+
+_Desligar (reinicialização do sistema ou logout)_
+
 shutdown -h now: Desligue o sistema (1).
 init 0: Desligue o sistema (2).
 telinit 0: Desligue o sistema (3).
@@ -135,10 +146,12 @@ shutdown -c: Cancele um desligamento do sistema planejado.
 shutdown -r now: Reinicie (1).
 reboot: Reinicie (2).
 logout: Feche a sessão.
-Arquivos e diretórios
+
+_Arquivos e diretórios_
+
 cd /home: Digite o diretório “em casa”.
 cd ..: Volte um nível.
-cd ../..: volta 2 níveis.
+[cd ../..: volta 2 níveis.
 cd: Vá para o diretório de raiz.
 cd ~user1: Vá para o diretório de user1.
 cd -: Volte para o diretório anterior.
@@ -171,7 +184,9 @@ file file1: saída (despejo na tela) do tipo mime de um arquivo de texto.
 iconv -l: listas de cifras conhecidas.
 iconv -f fromEncoding -t toEncoding inputFile > outputFile: Crie uma nova forma de arquivo de entrada assumindo que está codificado em fromEncoding e convertê-lo para ToEncoding.
 find . -maxdepth 1 -name *.jpg –print -exec convert ”{}” -resize 80×60 “thumbs/{}” \;: agrupando arquivos dimensionados no diretório atual e enviá-los aos diretórios em visualização de miniaturas (requer o converso do ImagemagicK).
-Encontrar arquivos
+
+_Encontrar arquivos_
+
 find / -name file1: busca de arquivo e diretório da raiz do sistema.
 find / -user user1: Encontre arquivos e diretórios pertencentes ao usuário ‘user1’.
 find /home/user1 -name \*.bin: Procure arquivos com extensão ‘. bin’ no diretório ‘/ home/user1’.
