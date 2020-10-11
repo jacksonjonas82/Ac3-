@@ -83,7 +83,7 @@ touch arq cria ou atualiza o arquivo (substituir a variável arq pelo nome do ar
 
 1 – execução (x, de execute)
 
-Explanação: Para definir permissões, somam-se os valores acima. Por exemplo, para atribuir ao dono do arquivo (“usuário) acesso total de leitura (r), gravação (w) e execução (x), basta somar o valor octal 4 + 2 + 1 = 7. Supondo que você queira limitar o acesso para membros do “grupo”, permitindo apenas a leitura e gravação, basta somar 4 + 2 = 6. Reunindo os dois exemplos citados, ficaria: chmod 760 (r para usuário, w para grupo e 0 para outros ou “rw-“)
+Explicação: Para definir permissões, somam-se os valores acima. Por exemplo, para atribuir ao dono do arquivo (“usuário) acesso total de leitura (r), gravação (w) e execução (x), basta somar o valor octal 4 + 2 + 1 = 7. Supondo que você queira limitar o acesso para membros do “grupo”, permitindo apenas a leitura e gravação, basta somar 4 + 2 = 6. Reunindo os dois exemplos citados, ficaria: chmod 760 (r para usuário, w para grupo e 0 para outros ou “rw-“)
 
 _Outros exemplos_
 
@@ -170,6 +170,64 @@ _Outros exemplos_
 ./configure
 make
 make install
+
+_Comandos de instaladores_
+
+1. dpkg -i deb instala um pacote DEB (distros Debian) (substituir a variável pacote.deb pelo nome do pacote de programa)
+
+2. rpm -Uvh rpm instala um pacote RPM (Distros que utilizam RPM) (substituir a variávelpacote.rpmpelo nome do pacote de programa)
+
+_Informações do sistema Linux_
+
+1. arch: Mostre a arquitetura da máquina (1).
+
+2. uname -m: Mostre a arquitetura da máquina (2).
+
+3. uname -r: Mostre versão do kernel usada.
+
+4. dmidecode -q: Mostre os componentes do sistema (hardware).
+
+5. hdparm -i /dev/hda: Mostre as características de um disco rígido.
+
+6. hdparm -tT /dev/sda: Execute teste de leitura em um disco rígido.
+
+7. cat /proc/cpuinfo: Exiba informações da CPU.
+
+8. cat /proc/interrupts: Mostre interrupções.
+
+9. cat /proc/meminfo: verificar a utilização de memória.
+
+10. cat /proc/swaps:df -h: Mostre o tamanho dos arquivos e diretórios ordenados por tamanho.
+
+11. ls -lSr |more: Estimar o espaço usado pelo diretório ‘dir1’.
+
+12. du -sh dir1: Mostre o tamanho dos arquivos e diretórios ordenados por tamanho.
+
+13. du -sk * | sort -rn: mostra o espaço usado por pacotes rpm instalados organizado pelo tamanho (Fedora, Red Hat e outros).
+
+14. rpm -q -a –qf ‘%10{SIZE}t%{NAME}n’ | sort -k1,1n: mostra o espaço usado por pacotes instalados, organizado pelo tamanho (Debian, Ubuntu e outros).
+
+15. dpkg-query -W -f=’${Installed-Size;10}t${Package}n’ | sort -k1,1n: g> Mostre arquivos de swap.
+
+16. cat /proc/version: Exiba a versão do kernel.
+
+17. cat /proc/net/dev: Mostre estatísticas e adaptadores de rede.
+
+18. cat /proc/mounts: Mostre o sistema de arquivos montado.
+
+19. lspci -tv: exiba os dispositivos PCI.
+
+20. lsusb -tv: Mostre os dispositivos USB.
+
+21. date: Mostre a data do sistema.
+
+22. cal 2011: Visualizar o calendário em 2011.
+
+23. cal 07 2011: Mostre o calendário para o mês de julho de 2011.
+
+24. date 041217002011.00: Coloque (estado, ajustar) data e hora.
+
+25. clock -w: Salve as alterações para a data na BIOS.
 
 
 # Links
